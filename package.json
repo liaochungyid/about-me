@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "rimraf -rf node_modules/.cache && set NODE_ENV=production && next build && next export && echo 1 > ./out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && set NODE_ENV="
   },
   "dependencies": {
     "next": "13.0.0",

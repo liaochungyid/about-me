@@ -5,12 +5,31 @@
 @layer base {
   html,
   body {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
   }
 }
 
 @layer components {
+  p,
+  span,
+  li,
   a {
-    @apply text-inherit no-underline;
+    @apply text-base;
+  }
+
+  .cus-transition {
+    @apply transition-all duration-500 ease-[cubic-bezier(.55,.55,.55,1.33)] hover:transition-all hover:duration-500 hover:ease-[cubic-bezier(.55,.55,.55,1.33)];
+  }
+
+  .cus-flex-col-item-center {
+    @apply flex flex-col items-center;
+  }
+
+  .cus-flex-row-item-center {
+    @apply flex flex-row items-center;
+  }
+
+  .tag {
+    @apply whitespace-nowrap px-3 py-2 rounded-md m-4 bg-slate-100 hover:bg-violet-600 text-violet-600 hover:text-slate-100 cus-transition;
   }
 }

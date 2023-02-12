@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  images: {
+    unoptimized: false,
+  },
+  basePath: "/about-me",
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

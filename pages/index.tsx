@@ -82,7 +82,7 @@ const EducationCard = ({ time, title, company, description }: ICardProps) => (
 
 const ProjectCard = ({ imgSrc, title, list, links }: IProjectCardProps) => (
   <div className="cus-flex-col-item-center ">
-    <Image
+    <img
       src={imgSrc}
       alt="gama-green screenshot"
       width={365}
@@ -152,7 +152,7 @@ export default function Home() {
       <Head>
         <title>Fullstack Developer | Lyle Liao</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
         <link rel="canonical" href="https://liaochungyid.github.io/about-me/" />
         <meta
           name="description"
@@ -192,7 +192,7 @@ export default function Home() {
           name="twitter:image"
           property="og:image"
           itemProp="image primaryImageOfPage"
-          content="/landing-view.png"
+          content="./landing-view.png"
         />
         <meta
           name="twitter:image:alt"
@@ -256,8 +256,8 @@ export default function Home() {
             Mission-driven full stack developer with a passion for thoughtful
             component design, collaboration, and new tech stack exploration.
           </p>
-          <Image
-            src="/illustration.jpg"
+          <img
+            src="./illustration.jpg"
             alt=""
             width={375}
             height={375}
@@ -411,6 +411,7 @@ export default function Home() {
               <span className="tag">Nextjs</span>
               <span className="tag">Material UI</span>
               <span className="tag">Ant Design</span>
+              <span className="tag">chakra-ui</span>
               <span className="tag">TailwindCss</span>
               <span className="tag">Restfull API</span>
               <span className="tag">ES6</span>
@@ -454,9 +455,34 @@ export default function Home() {
           itemClass="cus-flex-col-item-center max-w-screen-2xl"
         >
           <SectionTitle title="PROJECTS" />
-          <div className="w-full grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-8">
+          <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
             <ProjectCard
-              imgSrc="/gama-green.webp"
+              imgSrc="./user-auth.webp"
+              title="Practice: User Auth"
+              list={[
+                "使用Prisma建立與操作CRUD資料庫",
+                "使用tRPC(zod驗證) 請求與處理資料",
+              ]}
+              links={[
+                {
+                  href: "https://github.com/liaochungyid/user-auth",
+                  title: "Git",
+                },
+              ]}
+            />
+            <ProjectCard
+              imgSrc="./about-me.webp"
+              title="This About Me Site"
+              list={["使用 tailwindCSS"]}
+              links={[
+                {
+                  href: "https://github.com/liaochungyid/about-me",
+                  title: "Git",
+                },
+              ]}
+            />
+            <ProjectCard
+              imgSrc="./gama-green.webp"
               title="GAMA Green-Energy Technology SPA"
               list={[
                 "使用React與Nextjs製作SPA",
@@ -471,7 +497,7 @@ export default function Home() {
               ]}
             />
             <ProjectCard
-              imgSrc="/iwills.webp"
+              imgSrc="./iwills.webp"
               title="iWills, Pinnovation"
               list={[
                 "使用React與Nextjs製作完整網頁應用",
@@ -480,7 +506,7 @@ export default function Home() {
               links={[{ href: "https://iwills.sg/", title: "Live Site" }]}
             />
             <ProjectCard
-              imgSrc="/simple-twitter.webp"
+              imgSrc="./simple-twitter.webp"
               title="Simple Twitter"
               list={[
                 "使用 Nodejs, Express, MySQL等展示簡易的Twitter功能",
